@@ -1,10 +1,11 @@
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Accordion, AccordionDetails, AccordionSummary, Box } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Box, Link } from "@mui/material";
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 import React from "react";
 import { DynamicAttestation, TypedAttestation } from "../../lib/types";
+import { config } from "../../lib/constants";
 import { renderDynamicAttestationData, renderTypedAttestationData, timestampToLocalTimeStr } from "../../lib/utils";
 import styles from "./index.module.scss";
 
@@ -105,6 +106,9 @@ export const Attestations: React.FC<TypedAttestationsProps> = ({
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
+                  <Typography>
+                    <b>Автор аттестации:</b> <Link href={`${config.EXPLORER_ADDRESS}/address/${attestation.attestor}`} target='_blank'>{attestation.attestor}</Link>
+                  </Typography>
                   {renderTypedAttestationData(attestation.body)}
                   <Typography>
                     {attestation.expireAt > 0 ? (
@@ -138,7 +142,17 @@ export const Attestations: React.FC<TypedAttestationsProps> = ({
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
+                <Typography>
+                  <b>Автор аттестации:</b> <Link href={`${config.EXPLORER_ADDRESS}/address/${dynamicAttestations[item].attestor}`} target='_blank'>{dynamicAttestations[item].attestor}</Link>
+                </Typography>
                 {renderDynamicAttestationData(dynamicAttestations[item].body)}
+                <Typography>
+                    {dynamicAttestations[item].expireAt > 0 ? (
+                        <b>Истекает: {timestampToLocalTimeStr(dynamicAttestations[item].expireAt)}</b>
+                    ) : (
+                        <b>Бессрочно</b>
+                    )}
+                  </Typography>
               </AccordionDetails>
             </Accordion>))
           }

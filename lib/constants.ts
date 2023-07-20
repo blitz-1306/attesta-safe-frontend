@@ -3,6 +3,7 @@ import { AttestationCard, Config, HeaderLink, HowItWorksCardType, ServiceFeature
 export const config: Config = {
   ATTESTATOR_CONTRACT_ADDRESS: '0xae7337bD18921781D56676E42608fF2a05cFff7e',
   CHAIN_ID: '0x1b198',
+  EXPLORER_ADDRESS: 'https://explorer.test.siberium.net'
 };
 
 export const DATE_FORMAT_OPTS: Intl.DateTimeFormatOptions = {

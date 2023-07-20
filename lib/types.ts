@@ -1,6 +1,7 @@
 export type Config = {
   ATTESTATOR_CONTRACT_ADDRESS: string;
   CHAIN_ID: string;
+  EXPLORER_ADDRESS: string;
 };
 
 type SchemaElementType<T> = { name: string; dataType: string; childs: T[] };
