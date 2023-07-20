@@ -87,7 +87,7 @@ export const Attestations: React.FC<TypedAttestationsProps> = ({
           <Tab label="Произвольные" {...a11yProps(1)} />
         </Tabs>
         <TabPanel value={value} index={0}>
-          {typedAttestations?.map((attestation, idx) => (
+          {typedAttestations.length > 0 ? typedAttestations.map((attestation, idx) => (
               <Accordion expanded={activeTabTyped === `panel-${idx}`} onChange={handleTabTyped(`panel-${idx}`)} key={idx}>
                 <AccordionSummary
                     className={styles[`attestation__veRank${attestation.verificationRank}`]}
@@ -95,19 +95,17 @@ export const Attestations: React.FC<TypedAttestationsProps> = ({
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                 >
+                  <Typography>{attestation.name}</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
                   <Typography>
-                    {attestation.name} ({
+                    <b>Автор аттестации:</b> {<Link href={`${config.EXPLORER_ADDRESS}/address/${attestation.attestor}`} target='_blank'>{attestation.attestorName === "" ? attestation.attestor : attestation.attestorName}</Link>} ({
                       attestation.verificationRank === 2
                         ? "Государственная организация"
                         : attestation.verificationRank === 1
                           ? "Частная организация"
                           : "Прочие"
                     })
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    <b>Автор аттестации:</b> <Link href={`${config.EXPLORER_ADDRESS}/address/${attestation.attestor}`} target='_blank'>{attestation.attestor}</Link>
                   </Typography>
                   {renderTypedAttestationData(attestation.body)}
                   <Typography>
@@ -119,7 +117,7 @@ export const Attestations: React.FC<TypedAttestationsProps> = ({
                   </Typography>
                 </AccordionDetails>
               </Accordion>
-          ))}
+          )) : <Typography>Типизированные аттестации отсутствуют</Typography>}
         </TabPanel>
         <TabPanel value={value} index={1}>
           {
@@ -131,8 +129,11 @@ export const Attestations: React.FC<TypedAttestationsProps> = ({
                   aria-controls="panel1a-content"
                   id="panel1a-header"
               >
+                <Typography>{item}</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
                 <Typography>
-                  {item} ({
+                  <b>Автор аттестации:</b> <Link href={`${config.EXPLORER_ADDRESS}/address/${dynamicAttestations[item].attestor}`} target='_blank'>{dynamicAttestations[item].attestorName === "" ? dynamicAttestations[item].attestor : dynamicAttestations[item].attestorName}</Link> ({
                     dynamicAttestations[item].verificationRank === 2
                       ? "Государственная организация"
                       : dynamicAttestations[item].verificationRank === 1
@@ -140,19 +141,7 @@ export const Attestations: React.FC<TypedAttestationsProps> = ({
                         : "Прочие"
                   })
                 </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  <b>Автор аттестации:</b> <Link href={`${config.EXPLORER_ADDRESS}/address/${dynamicAttestations[item].attestor}`} target='_blank'>{dynamicAttestations[item].attestor}</Link>
-                </Typography>
                 {renderDynamicAttestationData(dynamicAttestations[item].body)}
-                <Typography>
-                    {dynamicAttestations[item].expireAt > 0 ? (
-                        <b>Истекает: {timestampToLocalTimeStr(dynamicAttestations[item].expireAt)}</b>
-                    ) : (
-                        <b>Бессрочно</b>
-                    )}
-                  </Typography>
               </AccordionDetails>
             </Accordion>))
           }

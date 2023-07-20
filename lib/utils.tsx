@@ -169,18 +169,24 @@ export const getUserTypedAttestations = async (a: Attestator, user: string) => {
       const [name, schema] = await a.getSchema(schemaHash);
 
       const verificationRank = await a.entityVerificationRank(attestor);
+      const attestorName = await a["entityName(address)"](attestor);
 
       attestations.push({
         name,
         body: decodeAttestationData(record.data, decodeSchema(schema)),
         expireAt: Number(record.expiredAt.toString()),
         attestor,
+        attestorName,
         verificationRank
       });
     }
   }
   return attestations;
 };
+
+export const getEntityName = async (a: Attestator, address: string) => {
+  return a["entityName(address)"](address);
+}
 
 export const getUserDynamicAttestations = async (
   a: Attestator,
@@ -204,6 +210,7 @@ export const getUserDynamicAttestations = async (
       const record = await a.getDynamicAttestation(attestor, user, key);
 
       const verificationRank = await a.entityVerificationRank(attestor);
+      const attestorName = await a["entityName(address)"](attestor);
 
       if (record.data.length === 0) {
         continue;
@@ -213,6 +220,7 @@ export const getUserDynamicAttestations = async (
         body: decodeDynamicAttestationData(record.data),
         expireAt: Number(record.expiredAt.toString()),
         attestor,
+        attestorName,
         verificationRank
       };
     }

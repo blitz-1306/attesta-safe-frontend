@@ -36,6 +36,7 @@ export type TypedAttestation = {
   name: string;
   body: { [key: string]: any };
   attestor: string;
+  attestorName: string;
   expireAt: number;
   verificationRank: number;
 };
@@ -44,6 +45,7 @@ export type DynamicAttestation = {
   [key: string]: {
     body: { [key: string]: any };
     attestor: string;
+    attestorName: string;
     expireAt: number;
     verificationRank: number;
   };

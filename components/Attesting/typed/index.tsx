@@ -247,6 +247,11 @@ const CreateAttestation: FC<AttestingProps> = ({attestator}) => {
             {value === 0 && (
                 <Box>
                     <Typography variant="h4" sx={{marginBottom: '24px'}}>Аттестация по схеме</Typography>
+
+                    <Box sx={{backgroundColor: "#f59a93", padding: "10px", borderRadius: "5px", margin: "15px 0px 30px 0px"}}>
+                        <Typography sx={{color: "#fff"}}>Данный функционал доступен только верифицированным участникам</Typography>
+                    </Box>
+
                     <FormControl fullWidth>
                         <InputLabel id="simple-select-label">Схема</InputLabel>
                         <Select

@@ -66,6 +66,10 @@ export const Index: FC<SchemaMakerProps> = ({ attestator }) => {
     <>
       <Typography variant="h5">Создание схем</Typography>
 
+      <Box sx={{backgroundColor: "#f59a93", padding: "10px", borderRadius: "5px", marginTop: "15px"}}>
+        <Typography sx={{color: "#fff"}}>Данный функционал доступен только верифицированным участникам</Typography>
+      </Box>
+
       <form className={styles.schema__page} onSubmit={handleSubmit}>
         <TextField
           type="text"
