@@ -1,0 +1,168 @@
+@import "../colors.module";
+
+.how-it-works {
+  background-color: $bgcolor--primary-black;
+  padding: 40px 0 85px;
+
+  &__text-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    font-family: 'Product Sans Light', sans-serif;
+    font-size: 140px;
+    font-weight: 300;
+    line-height: 100%;
+    color: $text-color--primary-white;
+
+    &-shape {
+      display: inline-block;
+      width: 78px;
+      height: 78px;
+      background-color: $bgcolor--primary-white;
+      border-radius: 50%;
+      box-sizing: border-box;
+      position: relative;
+      top: 4px;
+
+      &::before {
+        content: '';
+        width: 78px;
+        height: 78px;
+        display: block;
+        position: absolute;
+        top: -12px;
+        right: -13px;
+        border: 1px solid $color--orange;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__description-wrapper {
+    width: 43%;
+    margin-top: 39px;
+    padding-left: 24px;
+    border-left: 1px solid $color--orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__description {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 145%;
+    color: $text-color--white;
+  }
+
+  &__cards {
+    &-wrapper {
+      @media screen and (max-width: 1190px) {
+        overflow-x: scroll;
+      }
+    }
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 54px;
+    margin-bottom: 40px;
+
+    @media screen and (max-width: 1190px) {
+      min-width: 1140px;
+    }
+  }
+
+  &__user-card {
+    background-color: $bgcolor--black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 44px;
+    border: 1px solid $border-color--orange;
+    overflow: hidden;
+    position: relative;
+
+    &-title {
+      color: $text-color--primary-white;
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 125%;
+      margin-bottom: 55px;
+    }
+
+    &-head {
+      width: 178px;
+      height: 178px;
+      border-radius: 50%;
+      border: 1px solid $border-color--orange;
+      margin-bottom: 19px;
+    }
+
+    &-body {
+      width: 413px;
+      height: 413px;
+      border-radius: 50%;
+      border: 1px solid $border-color--orange;
+      position: absolute;
+      bottom: -70%;
+    }
+  }
+
+  &__demo-link {
+    display: block;
+    padding: 16px 29px;
+    border: 1px solid $bgcolor--primary-white;
+    color: $text-color--primary-white;
+    text-align: center;
+    font-family: 'Product Sans Light', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $color--orange;
+      border-color: $border-color--orange;
+    }
+  }
+
+  @media screen and (max-width: 1110px) {
+    &__text-wrapper {
+      flex-direction: column;
+      margin-bottom: 32px;
+    }
+
+    &__description-wrapper {
+      width: 100%;
+      margin-top: 39px;
+      padding: 0;
+      border: none;
+      text-align: center;
+      align-items: center;
+    }
+
+    &__description {
+      margin-bottom: 32px;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    &__title {
+      font-size: 65px;
+
+      &-shape {
+        width: 44px;
+        height: 44px;
+        top: 7px;
+
+        &::before {
+          width: 44px;
+          height: 44px;
+        }
+      }
+    }
+  }
+}

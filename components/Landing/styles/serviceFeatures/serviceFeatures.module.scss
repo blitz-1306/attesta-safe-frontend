@@ -1,0 +1,47 @@
+@import "../colors.module";
+
+.service-features {
+  background-color: $bgcolor--primary-white;
+  padding: 56px 0 129px;
+
+  &__container {
+    position: relative;
+  }
+
+  &__triangle {
+    width: 100%;
+    max-width: 277px;
+    height: auto;
+    max-height: 354px;
+    display: block;
+    position: absolute;
+    top: -15px;
+    right: 181px;
+  }
+
+  &__title {
+    font-size: 140px;
+    font-weight: 300;
+    font-family: 'Product Sans Light', sans-serif;
+    line-height: 100%;
+    margin-bottom: 70px;
+    position: relative;
+    z-index: 2;
+  }
+
+  @media screen and (max-width: 1110px) {
+    &__triangle {
+      display: none;
+    }
+
+    &__title {
+      font-size: 100px;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    &__title {
+      font-size: 65px;
+    }
+  }
+}

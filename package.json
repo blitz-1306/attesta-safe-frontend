@@ -1,0 +1,45 @@
+{
+  "name": "attesta-safe-dapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write . --ignore-path .gitignore",
+    "typechain": "typechain --target ethers-v5 --outDir ./contracts/types './contracts/*.json'"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.0",
+    "@mui/material": "^5.13.7",
+    "@mui/x-date-pickers": "^6.10.0",
+    "dayjs": "^1.11.9",
+    "dotenv": "^16.3.1",
+    "next": "^13.4.7",
+    "node-sass": "^9.0.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-tabs": "^6.0.1",
+    "react-toastify": "^9.1.3",
+    "sass": "^1.63.6"
+  },
+  "devDependencies": {
+    "@typechain/ethers-v5": "^6.0.0",
+    "@types/node": "^14.14.17",
+    "@types/react": "^18",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^4.11.1",
+    "@typescript-eslint/parser": "^4.11.1",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^7.1.0",
+    "ethers": "^5.0.31",
+    "prettier": "2.2.1",
+    "sass": "^1.63.6",
+    "typechain": "^4.0.2",
+    "typescript": "^4.1.3"
+  }
+}

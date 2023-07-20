@@ -1,0 +1,28 @@
+@import "../colors.module";
+
+.header-nav {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding: 0;
+
+  }
+
+  &__link {
+    font-size: 16px;
+    color: $text-color--gray;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      color: $text-color--orange;
+    }
+  }
+}

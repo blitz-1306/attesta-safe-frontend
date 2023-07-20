@@ -1,0 +1,12 @@
+@import "../colors.module";
+
+.footer {
+  background: $bgcolor--black;
+  padding: 39px 0;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

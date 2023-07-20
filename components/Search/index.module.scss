@@ -1,0 +1,14 @@
+.search {
+  display: flex;
+  flex-direction: column;
+
+  &__address {
+    display: flex;
+    padding: 25px 0;
+    align-items: center;
+  }
+
+  &__input {
+    width: 100%;
+  }
+}

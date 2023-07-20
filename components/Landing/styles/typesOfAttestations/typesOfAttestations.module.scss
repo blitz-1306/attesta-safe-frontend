@@ -1,0 +1,27 @@
+@import "../colors.module";
+
+.types-of-attestations {
+  background-color: $bgcolor--primary-white;
+  padding: 64px 0 104px;
+
+  &__description {
+    color: $text-color--black;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 145%;
+    margin-bottom: 64px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  @media screen and (max-width: 1110px) {
+    &__cards {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

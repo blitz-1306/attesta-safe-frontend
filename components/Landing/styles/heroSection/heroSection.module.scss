@@ -1,0 +1,44 @@
+@import "../colors.module";
+
+.hero-section {
+  background-color: $bgcolor--primary-black;
+  padding: 95px 0 147px;
+
+  &__title {
+    color: $text-color--primary-white;
+    text-align: center;
+    font-size: 140px;
+    font-weight: 700;
+    position: relative;
+
+    &--orange {
+      color: $text-color--orange;
+    }
+
+    &-icon {
+      position: absolute;
+      top: -56px;
+      right: 69px;
+    }
+
+    @media screen and (max-width: 1220px) {
+      &-icon {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 770px) {
+      font-size: 82px;
+    }
+  }
+
+  &__description {
+    color: $text-color--primary-white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Product Sans Light', sans-serif;
+    max-width: 665px;
+    margin: 0 auto;
+  }
+}

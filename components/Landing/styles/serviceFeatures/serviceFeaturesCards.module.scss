@@ -1,0 +1,11 @@
+@import "../colors.module";
+
+.service-features-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 24px;
+
+  @media screen and (max-width: 1110px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

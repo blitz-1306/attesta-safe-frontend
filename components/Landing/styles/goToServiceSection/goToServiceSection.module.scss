@@ -1,0 +1,115 @@
+@import "../colors.module";
+
+.go-to-service {
+  background: $bgcolor--primary-black;
+  padding: 40px 0 78px;
+
+  &__container {
+    display: flex;
+  }
+
+  &__title {
+    font-family: 'Product Sans Light', sans-serif;
+    font-size: 140px;
+    font-weight: 300;
+    line-height: 100%;
+    color: $text-color--primary-white;
+    width: 52.6%;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -25px;
+      right: 30px;
+      width: 98px;
+      height: 98px;
+      display: block;
+      background: $color--orange;
+      border-radius: 50%;
+    }
+  }
+
+  &__description {
+    &-wrapper {
+      width: 33%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-left: 1px solid $border-color--orange;
+      padding-left: 24px;
+      margin-top: 40px;
+      box-sizing: border-box;
+    }
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 145%;
+    color: $text-color--white;
+    flex-grow: 1;
+  }
+
+  &__link {
+    color: $text-color--primary-white;
+    text-align: center;
+    font-family: 'Product Sans Light', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    border: 1px solid $border-color--orange;
+    transition: 0.2s ease-in-out;
+    box-sizing: border-box;
+    padding: 26px 29px;
+    text-decoration: none;
+    width: 76%;
+
+    &:hover {
+      background: $color--orange;
+    }
+  }
+
+  @media screen and (max-width: 1110px) {
+    &__container {
+      flex-direction: column;
+    }
+
+    &__title {
+      width: 100%;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    &__description {
+      &-wrapper {
+        width: 55%;
+        border: none;
+        padding: 0;
+        margin-top: 40px;
+      }
+
+      margin-bottom: 32px;
+    }
+
+    &__link {
+      width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    &__title {
+      font-size: 65px;
+    }
+
+    &__description {
+      &-wrapper {
+        width: 100%;
+        border: none;
+        padding: 0;
+        margin-top: 40px;
+      }
+
+      margin-bottom: 32px;
+    }
+  }
+}

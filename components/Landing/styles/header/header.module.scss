@@ -1,0 +1,12 @@
+@import "../colors.module";
+
+.header {
+  background-color: $bgcolor--primary-black;
+  padding: 26px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

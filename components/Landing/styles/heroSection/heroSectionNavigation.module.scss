@@ -1,0 +1,39 @@
+@import "../colors.module";
+
+.hero-section {
+  &__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 37px;
+    max-width: 635px;
+    margin: 48px auto 0;
+  }
+
+  &__navigation-link {
+    width: 49%;
+    padding: 26px 29px;
+    color: $text-color--primary-white;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+
+    &--gray {
+      border: 1px solid $border-color--light-gray;
+
+      &:hover {
+        background: $border-color--light-gray;
+      }
+    }
+
+    &--orange {
+      border: 1px solid $border-color--orange;
+
+      &:hover {
+        background: $border-color--orange;
+      }
+    }
+  }
+}
