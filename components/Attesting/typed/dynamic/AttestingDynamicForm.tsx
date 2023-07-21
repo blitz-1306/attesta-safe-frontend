@@ -124,7 +124,7 @@ const AttestingDynamicForm: FC<AttestingDynamicFormProps> = ({
                 <FormControl fullWidth sx={{display: 'flex', gap: '12px', marginBottom: '12px'}}>
                     <TextField
                         id="address"
-                        label='Адрес'
+                        label='Адрес для аттестации в сети Сибериум'
                         variant="outlined"
                         name="subject"
                         required
